@@ -1,0 +1,13 @@
+Número de nodos: 5
+Número de aristas: 4
+
+1.- Conexión (1, 2) y (2, 1) = 1.225
+2.- Conexión (1, 3) y (3, 1) = 1
+3.- Conexión (2, 5) y (5, 2) = 2.236
+4.- Conexión (3, 4) y (4, 3) = 1
+
+Nodo 1 tiene 2 hijos: 2, 3
+Nodo 2 tiene 2 hijos: 1, 5
+Nodo 3 tiene 2 hijos: 1, 4
+Nodo 4 tiene 1 hijos: 3
+Nodo 5 tiene 1 hijos: 2
