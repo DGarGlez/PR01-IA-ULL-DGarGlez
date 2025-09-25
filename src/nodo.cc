@@ -4,24 +4,23 @@
  * @brief Constructor por defecto de la clase Nodo.
  * 
  */
-Nodo::Nodo() : id_(-1), pos_padre_(-1), coste_(0), padre_(nullptr) {}
+Nodo::Nodo() : id_(-1), coste_(0), recorrido_({}) {}
 
 /**
  * @brief Constructor de la clase Nodo.
  * 
  * @param id ID del nodo.
  */
-Nodo::Nodo(const int& id) : id_(id), pos_padre_(-1), coste_(0), padre_(nullptr) {}
+Nodo::Nodo(const int& id) : id_(id), coste_(0), recorrido_({}) {}
 
 /**
  * @brief Constructor de la clase Nodo.
  * 
  * @param id ID del nodo.
- * @param pos_padre Posición del padre en la estructura de nodos.
  * @param coste Coste de la arista hacia este nodo.
- * @param padre ID del nodo padre.
+ * @param recorrido Vector con el recorrido desde el nodo raíz hasta este nodo.
  */
-Nodo::Nodo(const int& id, const int& pos_padre, const int& coste, Nodo* padre) : id_(id), pos_padre_(pos_padre), coste_(coste), padre_(padre) {}
+Nodo::Nodo(const int& id, const int& coste, const std::vector<Nodo> recorrido) : id_(id), coste_(coste), recorrido_(recorrido) {}
 
 /**
  * @brief Método getter para obtener el ID del nodo.
@@ -35,21 +34,14 @@ int Nodo::GetID() const { return id_; }
  * 
  * @return int 
  */
-int Nodo::GetCoste() const { return coste_; }
-
-/**
- * @brief Método getter para obtener el nodo padre.
- * 
- * @return int 
- */
-Nodo* Nodo::GetPadre() const { return padre_; }
+double Nodo::GetCoste() const { return coste_; }
 
 /**
  * @brief Método getter para obtener la posición del padre en la estructura de nodos.
  * 
  * @return int 
  */
-int Nodo::GetPosPadre() const { return pos_padre_; }
+std::vector<Nodo> Nodo::GetRecorrido() const { return recorrido_; }
 
 /**
  * @brief Método setter para establecer el ID del nodo.
@@ -66,24 +58,19 @@ void Nodo::SetID(int id) { id_ = id; }
 void Nodo::SetCoste(int coste) { coste_ = coste; }
 
 /**
- * @brief Método setter para establecer el nodo padre.
+ * @brief Método setter para establecer el recorrido desde el nodo raíz hasta este nodo.
  * 
- * @param padre Nodo padre.
+ * @param recorrido Vector con el recorrido desde el nodo raíz hasta este nodo.
  */
-void Nodo::SetPadre(Nodo* padre) { padre_ = padre; }
+void Nodo::SetRecorrido(std::vector<Nodo> recorrido) { recorrido_ = recorrido; }
 
 /**
- * @brief Método setter para establecer la posición del padre en la estructura de nodos.
- * 
- * @param pos_padre Posición del padre en la estructura de nodos.
- */
-void Nodo::SetPosPadre(int pos_padre) { pos_padre_ = pos_padre; }
-
-/**
- * @brief Sobrecarga del operador == para comparar nodos por su ID y su padre.
+ * @brief Sobrecarga del operador == para comparar nodos por sus atributos.
  * 
  * @param otro Nodo a comparar.
  * @return true Si los nodos son iguales.
  * @return false Si los nodos son diferentes.
  */
-bool Nodo::operator==(const Nodo& otro) const { return id_ == otro.id_ && padre_ == otro.padre_; }
+bool Nodo::operator==(const Nodo& otro) const {
+    return id_ == otro.id_ && coste_ == otro.coste_ && recorrido_ == otro.recorrido_;
+}

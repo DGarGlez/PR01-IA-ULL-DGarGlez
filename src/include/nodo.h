@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 /**
  * @brief Clase que representa un nodo en un árbol de búsqueda.
@@ -7,28 +8,25 @@ class Nodo {
 
     private:
         int id_;            // ID del nodo
-        int pos_padre_;     // Posición del padre en la estructura de nodos
-        int coste_;         // Coste de la arista hacia este nodo
-        Nodo* padre_;       // Nodo padre
+        double coste_;         // Coste de la arista hacia este nodo
+        std::vector<Nodo> recorrido_; // Recorrido desde el nodo raíz hasta este nodo
 
     public:
         // Constructores de la clase
         Nodo();
         Nodo(const int&);
-        Nodo(const int&, const int&, const int&, Nodo*);
+        Nodo(const int&, const int&, std::vector<Nodo>);
 
         // Métodos getter y setter para acceder a los atributos
         int GetID() const;
-        int GetCoste() const;
-        Nodo* GetPadre() const;
-        int GetPosPadre() const;
+        double GetCoste() const;
+        std::vector<Nodo> GetRecorrido() const;
 
         // Métodos setter para establecer los atributos
         void SetID(int);
         void SetCoste(int);
-        void SetPadre(Nodo*);
-        void SetPosPadre(int);
+        void SetRecorrido(std::vector<Nodo>);
 
-        // Sobrecargar operador == para comparar nodos por su ID y su padre
+        // Sobrecarga del operador == para comparar nodos por su ID y los de los padres de forma recursiva
         bool operator==(const Nodo&) const;
 };

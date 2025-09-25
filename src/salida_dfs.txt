@@ -1,0 +1,24 @@
+Iteración 1
+Nodos Generados: 1
+Nodos Inspeccionados: -
+──────────────────────────────────────────────────
+Iteración 2
+Nodos Generados: 1, 2
+Nodos Inspeccionados: 1
+──────────────────────────────────────────────────
+Iteración 3
+Nodos Generados: 1, 2, 5
+Nodos Inspeccionados: 1, 2
+──────────────────────────────────────────────────
+Iteración 4
+Nodos Generados: 1, 2, 5, 3
+Nodos Inspeccionados: 1, 2, 5
+──────────────────────────────────────────────────
+Iteración 5
+Nodos Generados: 1, 2, 5, 3, 4
+Nodos Inspeccionados: 1, 2, 5, 3
+──────────────────────────────────────────────────
+Iteración 6
+Nodos Generados: 1, 2, 5, 3, 4
+Nodos Inspeccionados: 1, 2, 5, 3, 4
+──────────────────────────────────────────────────
