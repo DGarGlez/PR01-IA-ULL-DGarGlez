@@ -22,10 +22,10 @@ class Busqueda {
  public:
   // Función para realizar búsqueda en amplitud (BFS)
   static std::vector<Nodo> BusquedaEnAmplitud(const Grafo&, const int&, const int&, double&, std::ofstream&);
-/*
+
   // Función para realizar búsqueda en profundidad (DFS)
   static std::vector<Nodo> BusquedaEnProfundidad(const Grafo&, const int&, const int&, double&, std::ofstream&);
-
+/*
  private:
   private:
   // Función recursiva “interna” que hace la DFS

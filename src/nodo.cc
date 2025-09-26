@@ -20,7 +20,7 @@ Nodo::Nodo(const int& id) : id_(id), coste_(0), recorrido_({}) {}
  * @param coste Coste de la arista hacia este nodo.
  * @param recorrido Vector con el recorrido desde el nodo raíz hasta este nodo.
  */
-Nodo::Nodo(const int& id, const int& coste, const std::vector<Nodo> recorrido) : id_(id), coste_(coste), recorrido_(recorrido) {}
+Nodo::Nodo(const int& id, const double& coste, const std::vector<Nodo> recorrido) : id_(id), coste_(coste), recorrido_(recorrido) {}
 
 /**
  * @brief Método getter para obtener el ID del nodo.
@@ -32,14 +32,14 @@ int Nodo::GetID() const { return id_; }
 /**
  * @brief Método getter para obtener el coste de la arista hacia este nodo.
  * 
- * @return int 
+ * @return double 
  */
 double Nodo::GetCoste() const { return coste_; }
 
 /**
  * @brief Método getter para obtener la posición del padre en la estructura de nodos.
  * 
- * @return int 
+ * @return Nodo 
  */
 std::vector<Nodo> Nodo::GetRecorrido() const { return recorrido_; }
 

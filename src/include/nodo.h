@@ -15,7 +15,7 @@ class Nodo {
         // Constructores de la clase
         Nodo();
         Nodo(const int&);
-        Nodo(const int&, const int&, std::vector<Nodo>);
+        Nodo(const int&, const double&, std::vector<Nodo>);
 
         // Métodos getter y setter para acceder a los atributos
         int GetID() const;
